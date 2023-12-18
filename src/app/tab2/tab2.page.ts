@@ -63,6 +63,13 @@ export class Tab2Page {
     });
    
   }
+  async noteSwip(event: any, note: Note) {
+    if (event.detail.side === 'end') {
+        await this.deleteNote(note);
+    }else{
+      await this.editNote(note);
+    }
+  }
 
 
   loadNotes(fromFirst:boolean, event?:any){
